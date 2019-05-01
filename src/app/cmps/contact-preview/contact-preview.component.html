@@ -1,0 +1,11 @@
+<!-- USE A FUNCTION WAY -->
+<!-- <li (click)="moveToDetails(contact._id)"> -->
+
+<!-- ROUTER LINK WAY -->
+<li routerLink="/contact/{{contact._id}}">
+  <div>
+    <img height="60" [src]="contact.img" alt="" title={userName} />
+  </div>
+  <div>{{contact.name}}</div>
+  <!-- <button routerLink="/user/lala"> Button Label</button> -->
+</li>

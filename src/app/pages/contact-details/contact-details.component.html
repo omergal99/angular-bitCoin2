@@ -1,0 +1,21 @@
+<!-- <div *ngIf="contact"> -->
+<div>
+  <div class="contact-details">
+    <div class="contact-img">
+      <img height="100" [src]="contact.img" alt="" />
+    </div>
+
+    <div class="details">
+      <div>Name: {{contact.name}}</div>
+      <div>Phone: {{contact.phone}}</div>
+      <div>Email: {{contact.email}}</div>
+      <!-- <div>Coins: {{contact.coins}}</div> -->
+    </div>
+  </div>
+
+  <div class="options">
+    <img routerLink="/contact" height="30" src="assets/img/icons/menu.png" alt="" title="List" />
+    <!-- <img (click)="this.location.back()" height="30" src="assets/img/icons/back-arrow.png" alt="" title="Back" /> -->
+    <img routerLink="/contact/edit/{{contact._id}}" height="30" src="assets/img/icons/edit.png" alt="" title="Edit" />
+  </div>
+</div>

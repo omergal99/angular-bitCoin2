@@ -1,0 +1,11 @@
+
+  <div class="new-contact">
+    <div routerLink="/contact/edit/">
+      <img src="assets/img/icons/new-user.png" alt="" />
+    </div>
+  </div>
+
+  <ul class="contact-list" *ngIf="contacts">
+    <app-contact-preview *ngFor="let contact of contacts" [contact]="contact">
+    </app-contact-preview>
+  </ul>

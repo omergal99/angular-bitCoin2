@@ -1,0 +1,34 @@
+/********** Details **********/
+.contact-details {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 20px 0 20px;
+  .contact-img {
+    flex-grow: 1;
+    img {
+      height: 100px;
+      @media (min-width: 500px) {
+        height: 150px;
+      }
+    }
+  }
+  .details {
+    flex-grow: 1;
+    margin: auto;
+    text-align: left;
+    font-size: 0.8em;
+    @media (min-width: 500px) {
+      font-size: 1em;
+    }
+  }
+}
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 200px;
+  margin: 4px auto;
+  img {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,31 @@
+<div class="contact-container">
+
+  <div *ngIf="!contact._id" class="options-edit">
+    <h3>Add New</h3>
+
+    <img height="30" (click)="this.location.back()" src="assets/img/icons/back-arrow.png" alt="" title="Back" />
+
+  </div>
+
+  <div *ngIf="contact._id" class="options-edit">
+    <h3>Edit Contact</h3>
+    <img height="30" (click)="this.location.back()" src="assets/img/icons/back-arrow.png" alt="" title="Back" />
+
+    <img height="26" src="assets/img/icons/bin.png" title="Delete" alt="" />
+  </div>
+
+  <div>
+    <img height="100" [src]="contact.img" alt="" />
+  </div>
+
+  <div>
+    <form class="contact-form" (submit)="onSubmit($event)">
+      Name: <input [(ngModel)]="contact.name" type="text" name="name" placeholder="Contact Name" />
+      Email: <input [(ngModel)]="contact.email" type="email" name="email" placeholder="Email" />
+      Phone: <input [(ngModel)]="contact.phone" type="tel" name="phone" placeholder="Phone Number" />
+
+      <input type="submit" value="Save!" />
+    </form>
+  </div>
+
+</div>
