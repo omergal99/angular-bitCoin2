@@ -202,16 +202,6 @@ export class ContactService {
   //   this.contactSubject.next(contact)
   // }
 
-  // public getContactById(id: string) {
-  //   const contact = this.contacts.find(contact => contact._id === id)
-  //   return contact ? contact : null;
-  // }
-
-  // public getContactById(id: string) {
-  //   const contact = this.contacts.find(contact => contact._id === id)
-  //   return contact ? Promise.resolve(contact) : Promise.resolve(null);
-  // }
-
   public deleteContact(id: string) {
     const index = this.contacts.findIndex(contact => contact._id === id)
     if (index !== -1) {

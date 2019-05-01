@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 import Contact from '../../models/Contact';
@@ -12,7 +12,7 @@ import { ContactService } from '../../services/contact.service';
 })
 export class ContactEditComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute,
+  constructor(private route: ActivatedRoute,private router: Router,
     private contactService: ContactService,
     private location: Location) { }
 
@@ -24,7 +24,7 @@ export class ContactEditComponent implements OnInit {
       const id = params['id'];
       if (id) {
         this.contactService.getContactById(id).subscribe((contact) => {
-          this.contact = contact;
+          this.contact = {...contact};
         })
       } else {
         // this.contactService.newContact();
@@ -46,7 +46,13 @@ export class ContactEditComponent implements OnInit {
   }
   onSubmit(ev) {
     ev.preventDefault();
-    console.log('Edit doing...');
+    this.contactService.saveContact(this.contact)
+    this.router.navigate(['/contact']);
+  }
+  
+  removeContact(){
+    this.contactService.deleteContact(this.contact._id)
+    this.router.navigate(['/contact']);
   }
 
   formChanged(ev) {
